@@ -2,6 +2,7 @@ import React from 'react';
 import {csv, json} from 'd3-fetch';
 import DecadeGender from './DecadeGender';
 import AllGender from './AllGender';
+import DecadeGenre from './DecadeGenre';
 
 const longBlock = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -43,6 +44,7 @@ class RootComponent extends React.Component {
         <div>{longBlock}</div>
         <DecadeGender data={data}/>
         <div>{longBlock}</div>
+        <DecadeGenre data={data}/>
       </div>
     );
   }
