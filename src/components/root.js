@@ -1,5 +1,5 @@
 import React from 'react';
-import {csv} from 'd3-fetch';
+import {csv, json} from 'd3-fetch';
 import ExampleChart from './example-chart';
 
 const longBlock = `
@@ -20,7 +20,7 @@ class RootComponent extends React.Component {
   }
 
   componentWillMount() {
-    csv('data/sample-data.csv')
+    json('./data/cleanedgenredata.json')
       .then(data => {
         this.setState({
           data,
