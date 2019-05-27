@@ -12,32 +12,41 @@ function groupBy(data, key) {
   }, {});
 }
 
-export default class ExampleChart extends Component {
+export default class DecadeGender extends Component {
   constructor() {
     super();
     this.state = {
-      value: false, //tooltip position
-      keyOfInterest: 'animal'//button
+      value: false, // tooltip position
+      keyOfInterest: '1950s'
+
     };
   }
 
   render() {
     const {value, keyOfInterest} = this.state;
     const {data} = this.props;
-    const preppedData = Object.entries(groupBy(data, keyOfInterest)).map(([key, values]) => {
-      return {key, size: values.length};
-    });
+    const decades = groupBy(data, 'year_bin');
+    const mappedDecadess = Object.keys(decades);
+    const genders = groupBy(decades[keyOfInterest], 'Gender');
+    const preppedData = Object.keys(genders).map(key => ({key, size: genders[key].length}));
+
     return (
       <div>
+        {(mappedDecadess).map(key => {
+          return (<button
+          key={key}
+          onClick={() => this.setState({keyOfInterest: key})}
+          >{key} </button>);
+        })}
         <RadialChart
           animation
           innerRadius={100}
           radius={140}
           getAngle={d => d.size}
-          colorType="literal"
-          getColor={(d, idx) => {
-            return 'red';
-          }}
+          // colorType="literal"
+          // getColor={(d, idx) => {
+          //   return 'red';
+          // }}
           getLabel={d => d.key}
           showLabels={true}
           data={preppedData}
@@ -49,12 +58,6 @@ export default class ExampleChart extends Component {
         >
           {value !== false && <Hint value={value} />}
         </RadialChart>
-        {Object.keys(data[0]).map(key => {
-          return (<button
-            key={key}
-            onClick={() => this.setState({keyOfInterest: key})}
-            >{key}</button>);
-        })}
       </div>
     );
   }

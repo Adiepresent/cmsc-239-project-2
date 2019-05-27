@@ -1,6 +1,7 @@
 import React from 'react';
 import {csv, json} from 'd3-fetch';
-import ExampleChart from './example-chart';
+import DecadeGender from './DecadeGender';
+import AllGender from './AllGender';
 
 const longBlock = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -38,9 +39,9 @@ class RootComponent extends React.Component {
       <div className="relative">
         <h1> Hello Explainable!</h1>
         <div>{`The example data was loaded! There are ${data.length} rows`}</div>
-        <ExampleChart data={data}/>
+        <AllGender data={data}/>
         <div>{longBlock}</div>
-        <ExampleChart data={data}/>
+        <DecadeGender data={data}/>
         <div>{longBlock}</div>
       </div>
     );
