@@ -12,7 +12,7 @@ function groupBy(data, key) {
   }, {});
 }
 
-export default class DecadeGenre extends Component {
+export default class DecadeGender extends Component {
   constructor() {
     super();
     this.state = {
