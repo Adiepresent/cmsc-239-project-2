@@ -3,6 +3,9 @@ import {csv, json} from 'd3-fetch';
 import DecadeGender from './DecadeGender';
 import AllGender from './AllGender';
 import DecadeGenre from './DecadeGenre';
+import ClusterDecade from './ClusterDecade';
+import Example from './barGraph';
+// import InstSpeach from './InstSpeach';
 
 const longBlock = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -45,6 +48,9 @@ class RootComponent extends React.Component {
         <DecadeGender data={data}/>
         <div>{longBlock}</div>
         <DecadeGenre data={data}/>
+        <ClusterDecade data={data}/>
+        <Example data={data}/>
+
       </div>
     );
   }
