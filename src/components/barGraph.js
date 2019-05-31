@@ -11,14 +11,9 @@ import {
   LabelSeries
 } from 'react-vis';
 
-const greenData = [{x: 'A', y: 10}, {x: 'B', y: 5}, {x: 'C', y: 15}];
 
-const blueData = [{x: 'A', y: 12}, {x: 'B', y: 2}, {x: 'C', y: 11}];
 
-const labelData = greenData.map((d, idx) => ({
-  x: d.x,
-  y: Math.max(greenData[idx].y, blueData[idx].y)
-}));
+
 
 function groupBy(data, key) {
   return data.reduce((acc, row) => {
@@ -43,13 +38,27 @@ export default class Example extends Component {
   render() {
     const {value, keyOfInterest} = this.state;
     const {data} = this.props;
+
+
+
     const decades = groupBy(data, 'year_bin');
     const mappedDecadess = Object.keys(decades);
-    const genders = groupBy(decades[keyOfInterest], 'Gender');
-    const preppedData = Object.keys(genders).map(key => ({key, size: genders[key].length}));
+    const genders = groupBy(decades[keyOfInterest], 'main_genre');
+    const preppedDataa = Object.entries(genders).map(([key, values]) => ({x: key , y: genders[key].length}));
 
+
+
+    const greenData = [{x: 'A', y: 10}, {x: 'B', y: 5}, {x: 'C', y: 15}];
+
+    const blueData = [{x: 'A', y: 12}, {x: 'B', y: 2}, {x: 'C', y: 11}];
+
+    // const labelData = greenData.map((d, idx) => ({
+    //   x: d.x,
+    //   y: Math.max(greenData[idx].y, blueData[idx].y)
+    // }));
   //  const content = useCanvas ? 'TOGGLE TO SVG' : 'TOGGLE TO CANVAS';
     const BarSeries = value ? VerticalBarSeriesCanvas : VerticalBarSeries;
+    // const content = value ? 'TOGGLE TO SVG' : 'TOGGLE TO CANVAS';
     return (
       <div>
       {(mappedDecadess).map(key => {
@@ -58,14 +67,14 @@ export default class Example extends Component {
         onClick={() => this.setState({keyOfInterest: key})}
         >{key} </button>);
       })}
-        <XYPlot xType="ordinal" width={300} height={300} xDistance={100}>
+        <XYPlot xType="ordinal" width={900} height={300} xDistance={100}>
           <VerticalGridLines />
           <HorizontalGridLines />
           <XAxis />
           <YAxis />
-          <BarSeries className="vertical-bar-series-example" data={greenData} />
-          <BarSeries data={blueData} />
-          <LabelSeries data={labelData} getLabel={d => d.x} />
+          <BarSeries className="vertical-bar-series-example" data={preppedDataa} />
+
+
         </XYPlot>
       </div>
     );

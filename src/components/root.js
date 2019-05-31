@@ -41,16 +41,14 @@ class RootComponent extends React.Component {
     }
     return (
       <div className="relative">
-        <h1> Hello Explainable!</h1>
-        <div>{`The example data was loaded! There are ${data.length} rows`}</div>
+        <h1> An Analysis of Billboard's Top 100 Songs From 1951 - 2015</h1>
+        <div className="title">{`By`} </div>
         <AllGender data={data}/>
         <div>{longBlock}</div>
         <DecadeGender data={data}/>
         <div>{longBlock}</div>
-        <DecadeGenre data={data}/>
         <ClusterDecade data={data}/>
         <Example data={data}/>
-
       </div>
     );
   }
