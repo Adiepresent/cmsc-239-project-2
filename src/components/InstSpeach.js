@@ -59,7 +59,7 @@ export default class InstSpeach extends Component {
     return (
       <div>
         {(buttons).map(key => {
-          return (<button
+          return (<button className="button"
           key={key}
           onClick={() => this.setState({keyOfInterest: key})}
           >{key} </button>);

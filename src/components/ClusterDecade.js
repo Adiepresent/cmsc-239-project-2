@@ -39,10 +39,14 @@ export default class ClusterDecade extends Component {
           >{key} </button>);
         })}
         <RadialChart
+          // colorType={'literal'}
+          // colorDomain={[0, 100]}
+          // colorRange={[0, 10]}
           animation
-          innerRadius={100}
-          radius={140}
+          //innerRadius={100}
+        //  radius={140}
           getAngle={d => d.size}
+          //labelsStyle={{fontSize: 16, fill: '#222'}}
           // colorType="literal"
           // getColor={(d, idx) => {
           //   return 'red';
@@ -50,11 +54,12 @@ export default class ClusterDecade extends Component {
           getLabel={d => d.key}
           showLabels={true}
           data={preppedData}
+          labelsRadiusMultiplier={1.1}
           onValueMouseOver={v => this.setState({value: v})}
           onSeriesMouseOut={v => this.setState({value: false})}
           width={300}
           height={300}
-          padAngle={0.04}
+          //padAngle={0.04}
         >
           {value !== false && <Hint value={value} />}
         </RadialChart>

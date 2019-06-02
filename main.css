@@ -38,6 +38,21 @@
 }
 
 
+.blockquote {
+  text-indent: -0.8em;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: 1.4px;
+  font-family: Georgia, serif;
+}
+
+.question{
+  color: black;
+  font-family: Georgia, serif;
+  font-size: 36px;
+  font-weight: bold;
+}
+
 .title {
   color: black;
   font-family: Roboto-Black;
