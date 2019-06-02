@@ -1,4 +1,43 @@
 /* EDIT ANYTHING YOU WANT */
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 10px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #C70039;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #900C3F}
+
+.button:active {
+  background-color: #900C3F;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.table {
+  table-layout: fixed ;
+  width: 100% ;
+  border-collapse: collapse ;
+
+}
+.td {
+  width: 50% ;
+
+  padding: 10px ;
+}
+.caption {
+  font-style: italic ;
+}
+
+
 .title {
   color: black;
   font-family: Roboto-Black;

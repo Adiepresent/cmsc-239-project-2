@@ -66,9 +66,8 @@ It seems that there have been many changes to the genres of
 popularit over the past 6 decades.
 Maybe, the use of instruments dropped mostly because rock bands became less popular.
 From the 2000s to present day, the percentage of rock bands dropped significantly making
-way for a new brand of bands which were generally made up of ALL singers: Pop bands. 
+way for a new brand of bands which were generally made up of ALL singers: Pop bands.
 `;
-
 
 
 
@@ -100,14 +99,37 @@ class RootComponent extends React.Component {
       <div className="relative">
         <h1> An Analysis of Billboard's Top 100 Songs From 1951 - 2015</h1>
         <div className="title">{`By`} </div>
-        <div>{firstBlock}</div>
-        <AllGender data={data}/>
-        <div>{secondBlock}</div>
-        <DecadeGender data={data}/>
-        <div>{thirdBlock}</div>
-        <ClusterDecade data={data}/>
-        <div>{fourthBlock}</div>
-        <div>{fifthdBlock}</div>
+          <div>{firstBlock}</div>
+        <table className="table">
+          <tr>
+            <td className="td"> {secondBlock} </td>
+            <td className="td">
+              <AllGender data={data}/>
+            </td>
+          </tr>
+          <tr>
+            <td className="td">
+              <DecadeGender data={data}/>
+            </td>
+            <td className="td">{thirdBlock}
+            </td>
+          </tr>
+
+          <tr>
+            <td className="td"> {fourthBlock}
+            </td>
+            <td className="td">
+              <ClusterDecade data={data}/>
+            </td>
+          </tr>
+        </table>
+
+
+
+
+
+
+        <div className="title">{fifthdBlock}</div>
 
         <Example data={data}/>
         <div>{sixthdBlock}</div>
