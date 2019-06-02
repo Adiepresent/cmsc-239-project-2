@@ -5,7 +5,7 @@ import AllGender from './AllGender';
 import DecadeGenre from './DecadeGenre';
 import ClusterDecade from './ClusterDecade';
 import Example from './barGraph';
-// import InstSpeach from './InstSpeach';
+import InstSpeach from './InstSpeach';
 
 const firstBlock = `
 There’s a clear difference between modern popular music and older music.
@@ -133,6 +133,8 @@ class RootComponent extends React.Component {
 
         <Example data={data}/>
         <div>{sixthdBlock}</div>
+
+       <InstSpeach data={data}/> 
 
       </div>
     );

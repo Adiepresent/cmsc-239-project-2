@@ -44,13 +44,8 @@ export default class Example extends Component {
     const decades = groupBy(data, 'year_bin');
     const mappedDecadess = Object.keys(decades);
     const genders = groupBy(decades[keyOfInterest], 'main_genre');
-    const preppedDataa = Object.entries(genders).map(([key, values]) => ({x: key , y: genders[key].length}));
+    const preppedDataa = Object.entries(genders).map(([key, values]) => ({x: key, y: genders[key].length}));
 
-
-
-    const greenData = [{x: 'A', y: 10}, {x: 'B', y: 5}, {x: 'C', y: 15}];
-
-    const blueData = [{x: 'A', y: 12}, {x: 'B', y: 2}, {x: 'C', y: 11}];
 
     // const labelData = greenData.map((d, idx) => ({
     //   x: d.x,
@@ -62,7 +57,7 @@ export default class Example extends Component {
     return (
       <div>
       {(mappedDecadess).map(key => {
-        return (<button
+        return (<button className="button"
         key={key}
         onClick={() => this.setState({keyOfInterest: key})}
         >{key} </button>);

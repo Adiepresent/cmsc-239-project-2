@@ -33,7 +33,7 @@ export default class ClusterDecade extends Component {
     return (
       <div>
         {(mappedDecadess).map(key => {
-          return (<button
+          return (<button className="button"
           key={key}
           onClick={() => this.setState({keyOfInterest: key})}
           >{key} </button>);
