@@ -139,8 +139,6 @@ class RootComponent extends React.Component {
         <Example data={data}/>
         <div className="blockquote">{sixthdBlock}</div>
 
-
-
       </div>
     );
   }
