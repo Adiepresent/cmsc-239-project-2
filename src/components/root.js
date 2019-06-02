@@ -45,8 +45,11 @@ With those atributes in mind, there seem to be only two main clusters of songs. 
 and the Poetics. These are the two main clusters because they represent oppostie ends of the
 instrumentalness and speechiness spectrums. Instrumentalness predicts whether a track contains no vocals
 Speechiness detects the presence of spoken words in a track.
+`;
+
+const fourpoint5Block = `
 The String Lovers score high on Instrumentalness but low Speechiness.
-This means that artistes in this period tend to favor instruments as opposed to speech.
+This means that artistes in this cluster tend to favor instruments as opposed to speech.
 The Poetics are the direct opposite.
 They score pretty high in Speechiness but very low on Instrumentalness.
 
@@ -119,7 +122,15 @@ class RootComponent extends React.Component {
             <td className="td"> {fourthBlock}
             </td>
             <td className="td">
+              <InstSpeach data={data}/>
+            </td>
+          </tr>
+          <tr>
+            <td className="td">
               <ClusterDecade data={data}/>
+            </td>
+            <td className="td">
+              {fourpoint5Block}
             </td>
           </tr>
         </table>
@@ -134,7 +145,7 @@ class RootComponent extends React.Component {
         <Example data={data}/>
         <div>{sixthdBlock}</div>
 
-       <InstSpeach data={data}/> 
+
 
       </div>
     );
