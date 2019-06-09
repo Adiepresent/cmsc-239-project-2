@@ -6,7 +6,7 @@ import DecadeGenre from './DecadeGenre';
 import ClusterDecade from './ClusterDecade';
 import Example from './barGraph';
 import InstSpeach from './InstSpeach';
-import BarTwo from './BarTwo';
+import BarTwo from './DanceLoudDecade';
 
 const firstBlock = `
 There’s a clear difference between modern popular music and older music.

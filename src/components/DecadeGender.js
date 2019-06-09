@@ -18,7 +18,6 @@ export default class DecadeGender extends Component {
     this.state = {
       value: false, // tooltip position
       keyOfInterest: '1950s'
-
     };
   }
 

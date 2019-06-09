@@ -55,6 +55,8 @@ export default class InstSpeach extends Component {
     const preppedDataOne = ([{x: 'Poetic', y: avginst}]);
     const preppedDataTwo = ([{x: 'String Lover', y: avginst2}]);
 
+    console.log(clusters)
+
     const BarSeries = value ? VerticalBarSeriesCanvas : VerticalBarSeries;
     return (
       <div>
