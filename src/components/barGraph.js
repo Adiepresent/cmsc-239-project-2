@@ -39,21 +39,12 @@ export default class Example extends Component {
     const {value, keyOfInterest} = this.state;
     const {data} = this.props;
 
-
-
     const decades = groupBy(data[0], 'year_bin');
     const mappedDecadess = Object.keys(decades);
-    const genders = groupBy(decades[keyOfInterest], 'main_genre');
-    const preppedDataa = Object.entries(genders).map(([key, values]) => ({x: key, y: genders[key].length}));
-
-
-    // const labelData = greenData.map((d, idx) => ({
-    //   x: d.x,
-    //   y: Math.max(greenData[idx].y, blueData[idx].y)
-    // }));
-  //  const content = useCanvas ? 'TOGGLE TO SVG' : 'TOGGLE TO CANVAS';
+    const genres = groupBy(decades[keyOfInterest], 'main_genre');
+    const preppedDataa = Object.entries(genres).map(([key, values]) => ({x: key, y: genres[key].length}));
     const BarSeries = value ? VerticalBarSeriesCanvas : VerticalBarSeries;
-    // const content = value ? 'TOGGLE TO SVG' : 'TOGGLE TO CANVAS';
+
     return (
       <div>
       {(mappedDecadess).map(key => {

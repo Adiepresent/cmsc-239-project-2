@@ -4,8 +4,6 @@ import pandas as pd
 # read in data
 merged_data = pd.read_json('cleanedgenredata.json')
 merged_data = merged_data[['year_bin', 'danceability', 'energy', 'valence']]
-# print(merged_data.head())
-
 
 decades = merged_data['year_bin'].unique()
 
@@ -26,9 +24,9 @@ avgs_df.fillna(0,inplace=True)
 
 avgs_df['year_bin'] = decades
 # print(avgs_df['year_bin'])
-avgs_df['avg_danceability'] = danceability_avgs
-avgs_df['avg_energy'] = energy_avgs
-avgs_df['avg_valence'] = valence_avgs
+avgs_df['danceability'] = danceability_avgs
+avgs_df['energy'] = energy_avgs
+avgs_df['valence'] = valence_avgs
 
 # print(avgs_df.head())
 

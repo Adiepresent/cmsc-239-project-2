@@ -6,11 +6,22 @@ import {
   VerticalGridLines,
   HorizontalGridLines,
   VerticalBarSeries,
-  VerticalBarSeriesCanvas,
-  LabelSeries
+  VerticalBarSeriesCanvas
+  // 
 } from 'react-vis';
 
-import {RadarChart} from 'react-vis';
+function oneDecade(oneDecades, accessorKey) {
+  let sumres = 0;
+  let countres = 0;
+  const array = [];
+  oneDecades.forEach(d => {
+    sumres = sumres + Number(d[accessorKey]);
+    array.push(Number(d[accessorKey]));
+    countres += 1;
+  });
+  const meanres = sumres / countres;
+  return meanres;
+}
 
 function groupBy(data, key) {
   return data.reduce((acc, row) => {
@@ -27,7 +38,7 @@ export default class BarTwo extends Component {
     super();
     this.state = {
       value: false,
-      keyOfInterest: '1950s'
+      keyOfInterest: 'instrumentalness'
 
     };
   }
@@ -35,33 +46,32 @@ export default class BarTwo extends Component {
   render() {
     const {value, keyOfInterest} = this.state;
     const {data} = this.props;
-
-    const decades = groupBy(data, 'year_bin');
-    const mappedDecadess = Object.keys(decades);
-    const genders = groupBy(decades[keyOfInterest], 'danceability');
-    const preppedDataa = Object.entries(genders).map(([key, values]) => ({x: key, y: genders[key].length}));
+    const clusters = groupBy(data[0], 'cluster');
+    const buttons = ['instrumentalness', 'speechiness'];
+    const avginst = oneDecade(clusters['Poetic'], keyOfInterest);
+    const avginst2 = oneDecade(clusters['String Lover'], keyOfInterest);
+    const preppedDataOne = ([{x: 'Poetic', y: avginst}]);
+    const preppedDataTwo = ([{x: 'String Lover', y: avginst2}]);
 
     const BarSeries = value ? VerticalBarSeriesCanvas : VerticalBarSeries;
-    // const content = value ? 'TOGGLE TO SVG' : 'TOGGLE TO CANVAS';
     return (
       <div>
-      {(mappedDecadess).map(key => {
-        return (<button className="button"
-        key={key}
-        onClick={() => this.setState({keyOfInterest: key})}
-        >{key} </button>);
-      })}
-        <XYPlot xType="ordinal" width={900} height={300} xDistance={100}>
+        {(buttons).map(key => {
+          return (<button className="button"
+          key={key}
+          onClick={() => this.setState({keyOfInterest: key})}
+          >{key} </button>);
+        })}
+        <XYPlot xType="ordinal" width={300} height={300} xDistance={100}>
           <VerticalGridLines />
           <HorizontalGridLines />
           <XAxis />
           <YAxis />
-          <BarSeries className="vertical-bar-series-example" data={preppedDataa} />
+          <BarSeries className="vertical-bar-series-example" data={preppedDataOne} />
+          <BarSeries className="vertical-bar-series-example" data={preppedDataTwo} />
+
         </XYPlot>
       </div>
     );
   }
 }
-
-
-
