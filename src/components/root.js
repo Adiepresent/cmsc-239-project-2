@@ -6,6 +6,7 @@ import DecadeGenre from './DecadeGenre';
 import ClusterDecade from './ClusterDecade';
 import Example from './barGraph';
 import InstSpeach from './InstSpeach';
+import BarTwo from './BarTwo';
 
 const firstBlock = `
 There’s a clear difference between modern popular music and older music.
@@ -32,7 +33,7 @@ females occupy the smallest percentage, followed by group and then males.
 
 
 const thirdBlock = `
-Next, we want to breakdown each deace to better understnad if this trend has been consistent
+Next, we want to breakdown each decade to better understnad if this trend has been consistent
 over time. The 1950's are visably the worst for gender diversity in the industry. A Very
 large proportion of artists were male. Over time, while the the number of female artists have grown
 slightly, the biggest offset to the male dominace has been the growth of groups.
@@ -133,9 +134,13 @@ class RootComponent extends React.Component {
               {fourpoint5Block}
             </td>
           </tr>
+          <tr>
+            <td className="td">
+              <BarTwo data={data}/>
+            </td>
+          </tr>
         </table>
         <div className="question">{fifthdBlock}</div>
-
         <Example data={data}/>
         <div className="blockquote">{sixthdBlock}</div>
 
