@@ -24,7 +24,7 @@ export default class AllGender extends Component {
   render() {
     const {value} = this.state;
     const {data} = this.props;
-    const genders = groupBy(data, 'Gender');
+    const genders = groupBy(data[0], 'Gender');
     const preppedData = Object.keys(genders).map(key => ({key, size: genders[key].length}));
 
     return (

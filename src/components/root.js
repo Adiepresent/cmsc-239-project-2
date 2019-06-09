@@ -85,8 +85,10 @@ class RootComponent extends React.Component {
   }
 
   componentWillMount() {
-    json('./data/cleanedgenredata.json')
-      .then(data => {
+    Promise.all([
+    json('./data/cleanedgenredata.json'),
+    json('./data/averages.json')
+    ]).then(data => {
         this.setState({
           data,
           loading: false

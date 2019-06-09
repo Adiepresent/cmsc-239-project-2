@@ -48,14 +48,12 @@ export default class InstSpeach extends Component {
   render() {
     const {value, keyOfInterest} = this.state;
     const {data} = this.props;
-    const clusters = groupBy(data, 'cluster');
+    const clusters = groupBy(data[0], 'cluster');
     const buttons = ['instrumentalness', 'speechiness'];
     const avginst = oneDecade(clusters['Poetic'], keyOfInterest);
     const avginst2 = oneDecade(clusters['String Lover'], keyOfInterest);
     const preppedDataOne = ([{x: 'Poetic', y: avginst}]);
     const preppedDataTwo = ([{x: 'String Lover', y: avginst2}]);
-
-    console.log(clusters)
 
     const BarSeries = value ? VerticalBarSeriesCanvas : VerticalBarSeries;
     return (

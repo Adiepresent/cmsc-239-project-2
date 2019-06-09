@@ -41,7 +41,7 @@ export default class Example extends Component {
 
 
 
-    const decades = groupBy(data, 'year_bin');
+    const decades = groupBy(data[0], 'year_bin');
     const mappedDecadess = Object.keys(decades);
     const genders = groupBy(decades[keyOfInterest], 'main_genre');
     const preppedDataa = Object.entries(genders).map(([key, values]) => ({x: key, y: genders[key].length}));
