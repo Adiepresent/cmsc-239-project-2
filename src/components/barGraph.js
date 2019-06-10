@@ -38,7 +38,7 @@ export default class Example extends Component {
     const decades = groupBy(data[0], 'year_bin');
     const mappedDecadess = Object.keys(decades);
     const genres = groupBy(decades[keyOfInterest], 'main_genre');
-    const preppedDataa = Object.entries(genres).map(([key, values]) => ({x: key, y: decades[keyOfInterest]}));
+    const preppedDataa = Object.entries(genres).map(([key, values]) => ({x: key, y: genres[key].length}));
     const BarSeries = value ? VerticalBarSeriesCanvas : VerticalBarSeries;
 
     return (
