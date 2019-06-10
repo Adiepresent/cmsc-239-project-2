@@ -12,9 +12,6 @@ import {
 } from 'react-vis';
 
 
-
-
-
 function groupBy(data, key) {
   return data.reduce((acc, row) => {
     if (!acc[row[key]]) {
@@ -31,7 +28,6 @@ export default class Example extends Component {
     this.state = {
       value: false,
       keyOfInterest: '1950s'
-
     };
   }
 
@@ -42,7 +38,7 @@ export default class Example extends Component {
     const decades = groupBy(data[0], 'year_bin');
     const mappedDecadess = Object.keys(decades);
     const genres = groupBy(decades[keyOfInterest], 'main_genre');
-    const preppedDataa = Object.entries(genres).map(([key, values]) => ({x: key, y: genres[key].length}));
+    const preppedDataa = Object.entries(genres).map(([key, values]) => ({x: key, y: decades[keyOfInterest]}));
     const BarSeries = value ? VerticalBarSeriesCanvas : VerticalBarSeries;
 
     return (
@@ -59,8 +55,6 @@ export default class Example extends Component {
           <XAxis />
           <YAxis />
           <BarSeries className="vertical-bar-series-example" data={preppedDataa} />
-
-
         </XYPlot>
       </div>
     );

@@ -1,77 +1,45 @@
-import React, {Component} from 'react';
-import {
-  XYPlot,
-  XAxis,
-  YAxis,
-  VerticalGridLines,
-  HorizontalGridLines,
-  VerticalBarSeries,
-  VerticalBarSeriesCanvas
-  // 
-} from 'react-vis';
+import React from 'react';
+import {XYPlot, XAxis, YAxis, VerticalGridLines, HorizontalGridLines, LineSeries} from 'react-vis';
 
-function oneDecade(oneDecades, accessorKey) {
-  let sumres = 0;
-  let countres = 0;
-  const array = [];
-  oneDecades.forEach(d => {
-    sumres = sumres + Number(d[accessorKey]);
-    array.push(Number(d[accessorKey]));
-    countres += 1;
-  });
-  const meanres = sumres / countres;
-  return meanres;
+function removeCommas(str) {
+    return(str.replace(/,/g,''));
 }
 
-function groupBy(data, key) {
-  return data.reduce((acc, row) => {
-    if (!acc[row[key]]) {
-      acc[row[key]] = [];
-    }
-    acc[row[key]].push(row);
-    return acc;
-  }, {});
+const hipHopData = [
+  {x: removeCommas("1950"), y: 0},
+  {x: removeCommas("1960"), y: 0}, 
+  {x: removeCommas("1970"), y: 1}, 
+  {x: removeCommas("1980"), y: 3}, 
+  {x: removeCommas("1990"), y: 87},
+  {x: removeCommas("2000"), y: 148}, 
+  {x: removeCommas("2010"), y: 41}
+];
+
+const rockData = [
+  {x: removeCommas("1950"), y: 71},
+  {x: removeCommas("1960"), y: 285}, 
+  {x: removeCommas("1970"), y: 321}, 
+  {x: removeCommas("1980"), y: 422}, 
+  {x: removeCommas("1990"), y: 199},
+  {x: removeCommas("2000"), y: 60}, 
+  {x: removeCommas("2010"), y: 5}
+];
+
+const BarTwo = (props) => {
+        return (
+            <XYPlot
+                width={500}
+                height={500}>
+                <VerticalGridLines />
+                <HorizontalGridLines />
+                <XAxis />
+                <YAxis />
+                <LineSeries
+                    data={hipHopData}/>
+                <LineSeries 
+                  data={rockData}/>
+            </XYPlot>
+      );
 }
 
-export default class BarTwo extends Component {
-  constructor() {
-    super();
-    this.state = {
-      value: false,
-      keyOfInterest: 'instrumentalness'
-
-    };
-  }
-
-  render() {
-    const {value, keyOfInterest} = this.state;
-    const {data} = this.props;
-    const clusters = groupBy(data[0], 'cluster');
-    const buttons = ['instrumentalness', 'speechiness'];
-    const avginst = oneDecade(clusters['Poetic'], keyOfInterest);
-    const avginst2 = oneDecade(clusters['String Lover'], keyOfInterest);
-    const preppedDataOne = ([{x: 'Poetic', y: avginst}]);
-    const preppedDataTwo = ([{x: 'String Lover', y: avginst2}]);
-
-    const BarSeries = value ? VerticalBarSeriesCanvas : VerticalBarSeries;
-    return (
-      <div>
-        {(buttons).map(key => {
-          return (<button className="button"
-          key={key}
-          onClick={() => this.setState({keyOfInterest: key})}
-          >{key} </button>);
-        })}
-        <XYPlot xType="ordinal" width={300} height={300} xDistance={100}>
-          <VerticalGridLines />
-          <HorizontalGridLines />
-          <XAxis />
-          <YAxis />
-          <BarSeries className="vertical-bar-series-example" data={preppedDataOne} />
-          <BarSeries className="vertical-bar-series-example" data={preppedDataTwo} />
-
-        </XYPlot>
-      </div>
-    );
-  }
-}
+export default BarTwo;

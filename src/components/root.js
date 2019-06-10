@@ -9,34 +9,40 @@ import InstSpeach from './InstSpeach';
 import BarTwo from './DanceLoudDecade';
 
 const firstBlock = `
-There’s a clear difference between modern popular music and older music.
-Using billboard’s Hot 100 charts from 1950–2015 and Spotify’s API,
-we want to take a closer look at how much popular music has changed since the 1950s and find out what
-really distinguishes the music of today from the rest. We want to offer new insights into the components
-that make a song great or popular, as well as the evolution of our communities’ taste in music.
-In particular, we were interested in dissecting the most popular music in the United States from the 1950s
-to present day, for which we were able to find robust, detailed datasets for. Specifically, we want to depict
-the dynamic, constantly changing relationship between song popularity and  properties. Our objective
-was to answer the following questions: How does the prevalence of these aforementioned components
-change throughout the decades? How does genre popularity change over time? What is the relationship
-between artist gender and genre?
+Americans' taste in music has evolved significantly over the past number of decades.
+To investigate this evolution at a more granular level, we use a combination of Billboard's 
+Hot 100 Charts from 1950 - 2015 and Spotify's API. Using these exhaustive datasets that
+trace various attributes of songs throughout the years, we pick apart and isolate several of
+them to help us better understand what distinguishes the music of today from the past, as well as
+discover novel insights and correlations into the characteristics that make a song popular. 
+
+We decided to dissect the most popular music in the United States from 1950 - 2015 because we 
+were able to find the most robust, detailed datasets for this time frame. Our objective is to 
+answer the following questions: How does the prevalence of song components -- valence, energy, 
+danceability, instrumentalness, speechiness -- change throughout the decades? How does genre 
+popularity evolve over time? What is, if any, the relationship between artist gender and genre?
+Do we like upbeat music more or less than we ever did? In our quest to answer these questions, 
+in this article we isolate and display these assortment musical elements using a variety of 
+graphical means. 
 `;
 
 const secondBlock = `
-In recent times, a lot of studies have looked into gender diversity. People want to know the gender makeup of all
-the popular songs to understnad if there is corelation between artist's gender and sond popularit, or even
-just to see if there is enough diversity in the industy. Recently, a lot of studies have noted that the representatio
-of women in "popular" music has been very low. This first visualization gives a snapshot of the
-gender divide among artists from every song in the Billboard's top 100 since 1951. We can see that
-females occupy the smallest percentage, followed by group and then males.
+First, we want to examine the artist gender breakdown of popular songs to reveal whether there 
+is a correlation between artist gender and song popularity, and moreover, to observe gender
+diversity trends throughout the years in the industry as a whole. The following visualization 
+provides a snapshot of this breakdown based on a compilation of all Billboard Top 100 since 1951. 
+Evidently, female artists comprise the smallest percentage, followed by group (a mix of genders)
+and then, predominantly male artists.
 `;
 
 
 const thirdBlock = `
-Next, we want to breakdown each decade to better understnad if this trend has been consistent
-over time. The 1950's are visably the worst for gender diversity in the industry. A Very
-large proportion of artists were male. Over time, while the the number of female artists have grown
-slightly, the biggest offset to the male dominace has been the growth of groups.
+Now, we want to analyze this gender distribution amongst artists not only in more detail, but also with the
+addition of time as a variable in evaluating how this distirbution interacts with decade. We can visualize
+this using the following donut chart, in which you can toggle between decades. The 1950s are ostensibly the 
+worst in terms of gender diversity in the industry. Moreover, while the the number of female artists have grown
+slightly over time, the biggest offset to the male artist's dominance has not been the rise of female artists,
+but rather, the rise of artist groups.
 `;
 
 const fourthBlock = `

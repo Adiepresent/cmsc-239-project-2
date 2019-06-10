@@ -1,6 +1,4 @@
-
 import React, {Component} from 'react';
-// import ShowcaseButton from '../showcase-components/showcase-button';
 import {
   XYPlot,
   XAxis,
@@ -9,7 +7,6 @@ import {
   HorizontalGridLines,
   VerticalBarSeries,
   VerticalBarSeriesCanvas
-  // LabelSeries
 } from 'react-vis';
 
 function oneDecade(oneDecades, accessorKey) {
