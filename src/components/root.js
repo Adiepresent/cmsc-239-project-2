@@ -7,6 +7,7 @@ import ClusterDecade from './ClusterDecade';
 import Example from './barGraph';
 import InstSpeach from './InstSpeach';
 import BarTwo from './DanceLoudDecade';
+import HipHopRockPlot from './rockHipHop.js'
 
 const firstBlock = `
 Americans' taste in music has evolved significantly over the past number of decades.
