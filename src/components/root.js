@@ -111,11 +111,11 @@ class RootComponent extends React.Component {
     return (
       <div className="relative">
         <h1 > An Analysis of Billboard's Top 100 Songs From 1951 - 2015</h1>
-        <div className="title">{`By: Shira Eisenberg, Adie Present, Alessa Cross`} </div>
-          <div className="blockquote">{firstBlock}</div>
+        <h3>{`By: Adie Present, Alessa Cross, Shira Eisenberg`}</h3>
+          <div>{firstBlock}</div>
         <table className="table">
           <tr>
-            <td className="td blockquote"> {secondBlock} </td>
+            <td> {secondBlock} </td>
             <td className="td">
               <AllGender data={data}/>
             </td>
@@ -124,12 +124,12 @@ class RootComponent extends React.Component {
             <td className="td">
               <DecadeGender data={data}/>
             </td>
-            <td className="td blockquote">{thirdBlock}
+            <td>{thirdBlock}
             </td>
           </tr>
 
           <tr>
-            <td className="td blockquote"> {fourthBlock}
+            <td>{fourthBlock}
             </td>
             <td className="td">
               <InstSpeach data={data}/>
@@ -139,7 +139,7 @@ class RootComponent extends React.Component {
             <td className="td">
               <ClusterDecade data={data}/>
             </td>
-            <td className="td blockquote">
+            <td>
               {fourpoint5Block}
             </td>
           </tr>
@@ -154,9 +154,9 @@ class RootComponent extends React.Component {
           </td>
           </tr>
         </table>
-        <div className="question">{fifthdBlock}</div>
+        <div>{fifthdBlock}</div>
         <Example data={data}/>
-        <div className="blockquote">{sixthdBlock}</div>
+        <div>{sixthdBlock}</div>
 
       </div>
     );
