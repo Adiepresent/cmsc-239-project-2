@@ -88,7 +88,7 @@ the two genres' respective trends)!
 const eighthBlock = `
 Finally, we want to see if there is any correlation between mood and decade. As an approximated metric for the mood of
 the average American, we chose to trace a combination of Top 100 songs' danceability, energy, and valence, and its evolution
-from the 1950s to the 2010.
+from the 1950s to 2010.
 `;
 
 const finalBlock = `Songs with high valence generally sound more positive (i.e. happy, cheerful, euphoric), whereas 
