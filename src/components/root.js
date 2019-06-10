@@ -47,37 +47,57 @@ but rather, the rise of artist groups.
 `;
 
 const fourthBlock = `
-Moving away from gender, we want to look at other changes to the industry. There have been two
-significant changes to the atributes of songs - instrumentalness and speechiness.
-With those atributes in mind, there seem to be only two main clusters of songs. The String Lovers
-and the Poetics. These are the two main clusters because they represent oppostie ends of the
-instrumentalness and speechiness spectrums. Instrumentalness predicts whether a track contains no vocals
-Speechiness detects the presence of spoken words in a track.
+Moving away from artist gender, we want to look at other changes in popular song characteristics. In particular,
+instrumentalness and speechiness undergo notable shifts over the years that we want to analyze closer here. 
+These attributes appear to correlate to two main clusters or groupings of artists: String Lovers and Poetics. 
+These two main clusters reflect the opposing ends of the instrumentalness vs. speechiness spectrum. Instrumentalness 
+is the measure of how much of a particular track contains no vocals, while speechiness measures the presence of 
+spoken words in a track. Evidently, over the last number of decades, Americans have gravitated towards becoming
+Poetics who predominantly listen to music with a higher volume of lyrics from previously being String Lovers. You
+can observe this stark shift by toggling between the "speechiness" and "instrumentalness" buttons on this visual, 
+which reflects this change from the 1950s to 2010s. 
 `;
 
 const fourpoint5Block = `
-The String Lovers score high on Instrumentalness but low Speechiness.
-This means that artistes in this cluster tend to favor instruments as opposed to speech.
-The Poetics are the direct opposite.
-They score pretty high in Speechiness but very low on Instrumentalness.
-
-The other interesting thing about these clusters is when they appearon the Billboards Hot 100.
- Most String Lovers appeared on Billboard before the 1990s
- Most Poetics appeared on Billboard after the 1990s.
+String Lovers score high on Instrumentalness but low on Speechiness. Therefore in this cluster, artists tend to 
+favor instruments over pure vocals. Poetics, on the other hand, are the opposite. Once again considering time as 
+a variable, we see that most String Lovers appeared on Billboard before the 1990s while the majority of Poetics 
+appeared on Billboard's Top 100 after the 1990s.
 `;
 
 const fifthdBlock = `
-So what happened in 1990 that could explain this? Better yet, are there any other changes in
-the music industry that explain why Most String Lovers appeared on Billboard before the 1990s
-Most Poetics appeared on Billboard after the 1990s.
+So what happened in the 1990s that might explain this? Specifically, are there any other changes in
+the music industry during this time? Let's take a look. 
 `;
 
 const sixthdBlock = `
-It seems that there have been many changes to the genres of
-popularit over the past 6 decades.
-Maybe, the use of instruments dropped mostly because rock bands became less popular.
-From the 2000s to present day, the percentage of rock bands dropped significantly making
-way for a new brand of bands which were generally made up of ALL singers: Pop bands.
+Evidently there were many changes in genres distribution in popular songs over the past seven decades.
+This information, coupled with our knowledge frome earlier about the decline in String Lovers, leads us 
+to an interesting observation. From the 2000s to present day, the number of rock bands in the Top 100 dropped 
+significantly, making way for a new brand of bands -- Pop bands -- that were generally comprised of a group of 
+singers who relied primarily on vocals as opposed to the instrument-heavy genre of rock. Mix in the sharp rise
+in Hip Hop during this time, a genre that also incorporates a high volume of vocals and lyrics over a typically
+steady beat rather than a collection of instruments like guitars, drumsets and piano, and this dramatic shift
+in the 1990s makes far more sense. 
+`;
+
+const seventhBlock = `
+Through these interactive line graphs we can observe the aforementioned plummeting of Rock music in the Top 100 and
+simultaneous rise in Hip Hop. Just by observing the slope of these lines, and furthermore, the area enclosed by the lines
+and the the X and Y axes, we can process the sheer magnitude of these shifts. Try hovering over the graphs to take
+a closer look at the specific values (number of songs in that genre in the Top 100).
+`;
+
+const eighthBlock = `
+Finally, we want to see if there is any correlation between mood and decade. As an approximated metric for the mood of
+the average American, we chose to trace a combination of Top 100 songs' danceability, energy, and valence, and its evolution
+from the 1950s to the 2010. Song with high valence generally sound more positive (i.e. happy, cheerful, euphoric), whereas 
+songs with low valence sound more negative (i.e. sad, depressed, angry). Danceability is defined by how suitable a song is for 
+dancing based on a combination of tempo, rhythm stability, and beat strength, with 0.0 being the least danceable and 1.0 the most.
+And as for the energy of a song, the higher the value, the more energetic it is. We decided that a combination of these three 
+musical elements would be an appropriate metric for measuring mood in general. As evident in this interactive bar chart, 
+in which you can toggle between decades to observe changes in Danceability, Energy, and Valence, Americans seem to overall 
+listen to songs that correspond to being in a good mood than ever before. 
 `;
 
 
