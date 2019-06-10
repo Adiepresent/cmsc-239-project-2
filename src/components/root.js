@@ -111,7 +111,7 @@ class RootComponent extends React.Component {
     return (
       <div className="relative">
         <h1 > An Analysis of Billboard's Top 100 Songs From 1951 - 2015</h1>
-        <div className="title">{`By`} </div>
+        <div className="title">{`By: Shira Eisenberg, Adie Present, Alessa Cross`} </div>
           <div className="blockquote">{firstBlock}</div>
         <table className="table">
           <tr>
