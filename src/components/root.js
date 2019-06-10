@@ -147,6 +147,11 @@ class RootComponent extends React.Component {
               <BarTwo data={data}/>
             </td>
           </tr>
+          <tr>
+            <td className="td">
+              <HipHopRockPlot data={data}/>
+          </td>
+          </tr>
         </table>
         <div className="question">{fifthdBlock}</div>
         <Example data={data}/>
