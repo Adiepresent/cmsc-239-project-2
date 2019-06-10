@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {XYPlot, XAxis, YAxis, VerticalGridLines, HorizontalGridLines, LineSeries} from 'react-vis';
 
 function removeCommas(str) {
@@ -25,21 +25,64 @@ const rockData = [
   {x: removeCommas("2010"), y: 5}
 ];
 
-const HipHopRockPlot = (props) => {
-        return (
-            <XYPlot
-                width={500}
-                height={500}>
-                <VerticalGridLines />
-                <HorizontalGridLines />
-                <XAxis />
-                <YAxis />
-                <LineSeries
-                    data={hipHopData}/>
-                <LineSeries 
-                  data={rockData}/>
-            </XYPlot>
-      );
-}
+export default class HipHopRockPlot extends Component {
+  constructor() {
+    super();
+    this.state = {
+      valueRock: 'gray',
+      valueHipHop: 'gray',
+      label: 'Rock',
+      widthRock: 2, 
+      widthHipHop: 2
+    };
+  }
 
-export default HipHopRockPlot;
+  render() {
+    const {value} = this.state;
+
+    return (
+      <div>
+      <XYPlot
+          width={350}
+          height={500}>
+          <VerticalGridLines />
+          <HorizontalGridLines />
+          <XAxis position="middle" title="YEAR"/>
+          <YAxis position="middle" title="NUMBER OF SONGS IN TOP 100"/>
+          <LineSeries
+            onSeriesMouseOver={(event)=>{
+              this.setState({
+                valueHipHop: '#193177', 
+                widthHipHop: 10
+              })
+            }}
+            onSeriesMouseOut={(event)=>{
+              this.setState({
+                valueHipHop: 'gray',
+                widthHipHop: 2
+              })
+            }}
+            color={this.state.valueHipHop}
+            strokeWidth={this.state.widthHipHop}
+            data={hipHopData}/>
+          <LineSeries 
+            onSeriesMouseOver={(event)=>{
+              this.setState({
+                valueRock: '#79C7E3',
+                widthRock: 10
+              })
+            }}
+            onSeriesMouseOut={(event)=>{
+              this.setState({
+                valueRock: 'gray', 
+                widthRock: 2
+              })
+            }}
+            color={this.state.valueRock}
+            strokeWidth={this.state.widthRock}
+            data={rockData}/>
+      </XYPlot>
+      </div>
+    );
+  }
+}

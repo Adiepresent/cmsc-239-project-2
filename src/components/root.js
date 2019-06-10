@@ -66,13 +66,10 @@ appeared on Billboard's Top 100 after the 1990s.
 `;
 
 const fifthdBlock = `
-So what happened in the 1990s that might explain this? Specifically, are there any other changes in
-the music industry during this time? Let's take a look. 
-`;
+So what happened in the 1990s that might explain this? Specifically, are there any other changes in the music industry during this time? Let's take a look. `;
 
 const sixthdBlock = `
-Evidently there were many changes in genres distribution in popular songs over the past seven decades.
-This information, coupled with our knowledge frome earlier about the decline in String Lovers, leads us 
+Evidently there were many changes in genres distribution in popular songs over the past seven decades. This information, coupled with our knowledge from earlier about the decline in String Lovers, leads us 
 to an interesting observation. From the 2000s to present day, the number of rock bands in the Top 100 dropped 
 significantly, making way for a new brand of bands -- Pop bands -- that were generally comprised of a group of 
 singers who relied primarily on vocals as opposed to the instrument-heavy genre of rock. Mix in the sharp rise
@@ -84,14 +81,17 @@ in the 1990s makes far more sense.
 const seventhBlock = `
 Through these interactive line graphs we can observe the aforementioned plummeting of Rock music in the Top 100 and
 simultaneous rise in Hip Hop. Just by observing the slope of these lines, and furthermore, the area enclosed by the lines
-and the the X and Y axes, we can process the sheer magnitude of these shifts. Try hovering over the graphs to take
-a closer look at the specific values (number of songs in that genre in the Top 100).
+and the the X and Y axes, we can process the sheer magnitude of these shifts (Try hovering over the graphs to highlight
+the two genres' respective trends)!
 `;
 
 const eighthBlock = `
 Finally, we want to see if there is any correlation between mood and decade. As an approximated metric for the mood of
 the average American, we chose to trace a combination of Top 100 songs' danceability, energy, and valence, and its evolution
-from the 1950s to the 2010. Song with high valence generally sound more positive (i.e. happy, cheerful, euphoric), whereas 
+from the 1950s to the 2010.
+`;
+
+const finalBlock = `Songs with high valence generally sound more positive (i.e. happy, cheerful, euphoric), whereas 
 songs with low valence sound more negative (i.e. sad, depressed, angry). Danceability is defined by how suitable a song is for 
 dancing based on a combination of tempo, rhythm stability, and beat strength, with 0.0 being the least danceable and 1.0 the most.
 And as for the energy of a song, the higher the value, the more energetic it is. We decided that a combination of these three 
@@ -130,7 +130,7 @@ class RootComponent extends React.Component {
     }
     return (
       <div className="relative">
-        <h1 > An Analysis of Billboard's Top 100 Songs From 1951 - 2015</h1>
+        <h1 style={{fontSize:50}}> An Analysis of Billboard's Top 100 Songs From 1951 - 2015</h1>
         <h3>{`By: Adie Present, Alessa Cross, Shira Eisenberg`}</h3>
           <div>{firstBlock}</div>
         <table className="table">
@@ -146,8 +146,7 @@ class RootComponent extends React.Component {
             </td>
             <td>{thirdBlock}
             </td>
-          </tr>
-
+          </tr> 
           <tr>
             <td>{fourthBlock}
             </td>
@@ -163,21 +162,31 @@ class RootComponent extends React.Component {
               {fourpoint5Block}
             </td>
           </tr>
+        </table>
+          <h2 style={{color:'#404040'}}>{fifthdBlock}</h2>
+          <Example data={data}/>
+          <div>{sixthdBlock}</div>
+          <h1 style={{ color: 'blue', float: 'center'}}> </h1>
+          <h1 style={{ color: '#193177', display: 'inline', float: 'center', fontSize: 40}}>Hip Hop </h1>
+          <h1 style={{ color: '#404040', display: 'inline', fontSize: 40}}>/</h1>
+          <h1 style={{ color: '#79C7E3', display: 'inline', fontSize: 40}}> Rock</h1>
+          <h1 style={{ color: '#404040', display: 'inline', fontSize: 40}}> </h1>
+        <table>
           <tr>
-            <td className="td">
-              <BarTwo data={data}/>
+            <td className="td">{seventhBlock}
             </td>
-          </tr>
-          <tr>
-            <td className="td">
-              <HipHopRockPlot data={data}/>
-          </td>
+              <HipHopRockPlot/>
           </tr>
         </table>
-        <div>{fifthdBlock}</div>
-        <Example data={data}/>
-        <div>{sixthdBlock}</div>
-
+        <h1 style={{ fontSize: 50}}> </h1>
+        <div><h2 style={{ color: '#404040', float: 'center'}}>{eighthBlock}</h2></div>
+        <h1 style={{ fontSize: 50}}> </h1>
+        <table>
+        <tr>
+        <BarTwo data={data}/>
+        <td>{finalBlock}</td>
+        </tr>
+        </table>
       </div>
     );
   }
