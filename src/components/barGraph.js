@@ -49,7 +49,56 @@ export default class Example extends Component {
         onClick={() => this.setState({keyOfInterest: key})}
         >{key} </button>);
       })}
-        <XYPlot xType="ordinal" width={900} height={300} xDistance={100}>
+        <XYPlot xType="ordinal" width={900} height={300} xDistance={100} colorType="literal"
+                  getColor={(d, idx) => {
+                    let color = '#00000';
+                    if (d.x === 'rock') {
+                      color = '#EA0484';
+                    }
+                    if (d.x === 'multi-genre-artist') {
+                      color = '#040404';
+                    }
+                    if (d.x === 'pop') {
+                      color = '#EAEA84';
+                    }
+                    if (d.x === 'soul') {
+                      color = '#8404EA';
+                    }
+                    if (d.x === 'country') {
+                      color = '#EA8404';
+                    }
+                    if (d.x === 'jazz') {
+                      color = '#0404EA';
+                    }
+                    if (d.x === 'electronic/dance') {
+                      color = '#8484EA';
+                    }
+                    if (d.x === 'disco') {
+                      color = '#EAEA04';
+                    }
+                    if (d.x === 'alternative/indie') {
+                      color = '#8484EA';
+                    }
+                    if (d.x === 'blues') {
+                      color = '#04EA04';
+                    }
+                    if (d.x === 'rnb') {
+                      color = '#840484';
+                    }
+                    if (d.x === 'reggae') {
+                      color = '#84EA84';
+                    }
+                    if (d.x === 'folk') {
+                      color = '#EA84EA';
+                    }
+                    if (d.x === 'swing') {
+                      color = '#FFB3FF';
+                    }
+                    if (d.x === 'hip-hop') {
+                      color = '#67B3FF';
+                    }
+                    return color;
+                  }}>
           <VerticalGridLines />
           <HorizontalGridLines />
           <XAxis />

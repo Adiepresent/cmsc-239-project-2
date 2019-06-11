@@ -8,13 +8,13 @@
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #C70039;
+  background-color: #A9A9A9;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
 
-.button:hover {background-color: #900C3F}
+.button:hover {background-color: #000000}
 
 .button:active {
   background-color: #900C3F;

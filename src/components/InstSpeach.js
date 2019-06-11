@@ -61,7 +61,14 @@ export default class InstSpeach extends Component {
           onClick={() => this.setState({keyOfInterest: key})}
           >{key} </button>);
         })}
-        <XYPlot xType="ordinal" width={300} height={300} xDistance={100}>
+        <XYPlot xType="ordinal" width={300} height={300} xDistance={100} colorType="literal"
+                  getColor={(d, idx) => {
+                    let color = '#FF9D40';
+                    if (d.x === 'Poetic') {
+                      color = '#37B6CE';
+                    }
+                    return color;
+                  }}>
           <VerticalGridLines />
           <HorizontalGridLines />
           <XAxis />

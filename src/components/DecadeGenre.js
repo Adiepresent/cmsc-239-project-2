@@ -43,10 +43,10 @@ export default class DecadeGender extends Component {
           innerRadius={100}
           radius={140}
           getAngle={d => d.size}
-          // colorType="literal"
-          // getColor={(d, idx) => {
-          //   return 'red';
-          // }}
+          colorType="literal"
+          getColor={(d, idx) => {
+            return 'red';
+          }}
           getLabel={d => d.key}
           showLabels={true}
           data={preppedData}

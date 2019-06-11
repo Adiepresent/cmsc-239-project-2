@@ -39,21 +39,23 @@ export default class ClusterDecade extends Component {
           >{key} </button>);
         })}
         <RadialChart
-          // colorType={'literal'}
-          // colorDomain={[0, 100]}
-          // colorRange={[0, 10]}
           animation
-          //innerRadius={100}
-        //  radius={140}
           getAngle={d => d.size}
           //labelsStyle={{fontSize: 16, fill: '#222'}}
-          // colorType="literal"
-          // getColor={(d, idx) => {
-          //   return 'red';
-          // }}
           getLabel={d => d.key}
           showLabels={true}
           data={preppedData}
+          colorType="literal"
+          getColor={(d, idx) => {
+            let color = '#000000';
+            if (d.key === 'String Lover') {
+              color = '#FF9D40';
+            }
+            if (d.key === 'Poetic') {
+              color = '#37B6CE';
+            }
+            return color;
+           }}
           labelsRadiusMultiplier={1.1}
           onValueMouseOver={v => this.setState({value: v})}
           onSeriesMouseOut={v => this.setState({value: false})}
