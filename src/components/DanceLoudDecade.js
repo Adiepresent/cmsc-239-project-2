@@ -15,7 +15,7 @@ function getDataNum(data,decade,key2) {
   if(key2 == 'danceability'){
     return(Number(data[decade][0].danceability));
   }
-  else if(key2 == 'energy') {  
+  else if(key2 == 'energy') {
     return (Number(data[decade][0].energy));
   }
   else if(key2 == 'valence'){
@@ -52,21 +52,21 @@ export default class Example extends Component {
     // console.log(decades);
     const mappedDecadess = Object.keys(decades);
     // console.log(mappedDecadess);
-  
+
     // const cats = groupBy(decades[keyOfInterest],)
-    
+
     const dance = getDataNum(decades, keyOfInterest, 'danceability');
-    console.log(dance);
+    //console.log(dance);
     const energy = getDataNum(decades, keyOfInterest, 'energy');
-    console.log(energy);
+  //  console.log(energy);
     const valence = getDataNum(decades, keyOfInterest, 'valence');
-    console.log(valence);
+  //  console.log(valence);
     const preppedDataDance = ([{x: 'Danceability', y: dance}]);
-    console.log(preppedDataDance);
+  //  console.log(preppedDataDance);
     const preppedDataEnergy = ([{x: 'Energy', y: energy}]);
-    console.log(preppedDataEnergy);
+  //  console.log(preppedDataEnergy);
     const preppedDataValence = ([{x: 'Valence', y: valence}]);
-    console.log(preppedDataValence);
+  //  console.log(preppedDataValence);
 
     const BarSeries = value ? VerticalBarSeriesCanvas : VerticalBarSeries;
 
