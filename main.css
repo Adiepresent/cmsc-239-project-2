@@ -1,4 +1,13 @@
 /* EDIT ANYTHING YOU WANT */
+
+
+.margin {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+}
+
 .button {
   display: inline-block;
   padding: 10px 15px;
@@ -30,11 +39,12 @@
 }
 .td {
   width: 50% ;
-  
+
   padding: 10px ;
 }
 .caption {
-  font-style: italic ;
+
+  text-align: justify;
 }
 
 

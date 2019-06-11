@@ -137,43 +137,43 @@ class RootComponent extends React.Component {
       <div className="relative">
         <h1 style={{fontSize:50}}> An Analysis of Billboard's Top 100 Songs From 1951 - 2015</h1>
         <h3>{`By: Adie Present, Alessa Cross, Shira Eisenberg`}</h3>
-          <div>{firstBlock}</div>
-        <table className="table">
-          <tr>
-            <td> {secondBlock} </td>
+        <div className="caption margin">{firstBlock}</div>
+        <table className="table margin">
+          <tr className="margin">
+            <td className="caption"> {secondBlock} </td>
             <td className="td">
               <AllGender data={data}/>
             </td>
           </tr>
-          <tr>
-            <td className="td">
+          <tr className="margin">
+            <td className="caption margin">{thirdBlock}
+            </td>
+            <td className="td margin">
               <DecadeGender data={data}/>
             </td>
-            <td>{thirdBlock}
-            </td>
           </tr>
-          <tr>
-            <td>{fourthBlock}
+          <tr className="margin">
+            <td className="caption">{fourthBlock}
             </td>
             <td className="td">
               <InstSpeach data={data}/>
             </td>
           </tr>
           <tr>
+            <td className="caption">
+              {fourpoint5Block}
+            </td>
             <td className="td">
               <ClusterDecade data={data}/>
-            </td>
-            <td>
-              {fourpoint5Block}
             </td>
           </tr>
         </table>
 
 
 
-          <h2 style={{color:'#404040'}}>{fifthdBlock}</h2>
-          <Example data={data}/>
-          <div>{sixthdBlock}</div>
+          <h2 className="caption margin" style={{color:'#404040'}}>{fifthdBlock}</h2>
+          <div className="margin"> <Example data={data}/> </div>
+          <div className="margin">{sixthdBlock}</div>
           <h1 style={{ color: 'blue', float: 'center'}}> </h1>
           <h1 style={{ color: '#67B3FF', display: 'inline', float: 'center', fontSize: 40}}>Hip Hop </h1>
           <h1 style={{ color: '#404040', display: 'inline', fontSize: 40}}>/</h1>
@@ -181,18 +181,18 @@ class RootComponent extends React.Component {
           <h1 style={{ color: '#404040', display: 'inline', fontSize: 40}}> </h1>
         <table>
           <tr>
-            <td className="td">{seventhBlock}
+            <td className="td caption">{seventhBlock}
             </td>
               <HipHopRockPlot/>
           </tr>
         </table>
         <h1 style={{ fontSize: 50}}> </h1>
-        <div><h2 style={{ color: '#404040', float: 'center'}}>{eighthBlock}</h2></div>
+        <div><h2 className="caption" style={{ color: '#404040', float: 'center'}}>{eighthBlock}</h2></div>
         <h1 style={{ fontSize: 50}}> </h1>
         <table>
         <tr>
         <BarTwo data={data}/>
-        <td>{finalBlock}</td>
+        <td className="caption">{finalBlock}</td>
         </tr>
         </table>
       </div>
