@@ -1,0 +1,20 @@
+url of web page:
+
+url of your code: https://github.com/Adiepresent/cmsc-239-project-2
+
+ who did what:
+
+ Adie:
+ data manipulation and react code for the first five graphs,
+ the CSS changes,
+ the html formatting,
+ first draft of the article alongside the first five graphs
+
+ Alessa:
+ Data manipulation and react code for the Line graph (the sixth graph),
+ the whole article,
+ the tooltip interaction on the fifth graph??
+
+ Shira:
+ data manipulation for the last bar graph (the fifth graph),
+ debugging
