@@ -75,16 +75,17 @@ So what happened in the 1990s that might explain this? Specifically, are there a
 
 const sixthdBlock = `
 Evidently there were many changes in genres distribution in popular songs over the past seven decades. This information, coupled with our knowledge from earlier about the decline in String Lovers, leads us
-to an interesting observation. From the 2000s to present day, the number of rock bands in the Top 100 dropped
+to an interesting observation. Take a look at the bar graph above more carefully, can you tell which genre dropped significantly and which grew sharply?
+Hover over the line graph below to confirm your answer! (The color of the line will match the color of the genre in the bar graph).
+`;
+
+const seventhBlock = `
+From the 2000s to present day, the number of rock bands in the Top 100 dropped
 significantly, making way for a new brand of bands -- Pop bands -- that were generally comprised of a group of
 singers who relied primarily on vocals as opposed to the instrument-heavy genre of rock. Mix in the sharp rise
 in Hip Hop during this time, a genre that also incorporates a high volume of vocals and lyrics over a typically
 steady beat rather than a collection of instruments like guitars, drumsets and piano, and this dramatic shift
-in the 1990s makes far more sense.
-`;
-
-const seventhBlock = `
-Through these interactive line graphs we can observe the aforementioned plummeting of Rock music in the Top 100 and
+in the 1990s makes far more sense. Through these interactive line graphs we can observe the aforementioned plummeting of Rock music in the Top 100 and
 simultaneous rise in Hip Hop. Just by observing the slope of these lines, and furthermore, the area enclosed by the lines
 and the the X and Y axes, we can process the sheer magnitude of these shifts. Hovering over the graphs highlight which trend
 corresponds to which genre!
@@ -174,6 +175,7 @@ class RootComponent extends React.Component {
           <h2 className="caption margin" style={{color:'#404040'}}>{fifthdBlock}</h2>
           <div className="margin"> <Example data={data}/> </div>
           <div className="margin">{sixthdBlock}</div>
+          <div className="margin caption "> <HipHopRockPlot/> </div>
           <h1 style={{ color: 'blue', float: 'center'}}> </h1>
           <h1 style={{ color: '#67B3FF', display: 'inline', float: 'center', fontSize: 40}}>Hip Hop </h1>
           <h1 style={{ color: '#404040', display: 'inline', fontSize: 40}}>/</h1>
@@ -181,9 +183,9 @@ class RootComponent extends React.Component {
           <h1 style={{ color: '#404040', display: 'inline', fontSize: 40}}> </h1>
         <table>
           <tr>
-            <td className="td caption">{seventhBlock}
-            </td>
-              <HipHopRockPlot/>
+
+              <td className="td margin caption">{seventhBlock}
+              </td>
           </tr>
         </table>
         <h1 style={{ fontSize: 50}}> </h1>

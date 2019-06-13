@@ -13,8 +13,7 @@ url of your code: https://github.com/Adiepresent/cmsc-239-project-2
  Alessa:
  Data manipulation and react code for the Line graph (the sixth graph),
  the whole article,
- the tooltip interaction on the fifth graph.
 
  Shira:
- data manipulation for the last bar graph (the fifth graph),
+ data manipulation for the last bar graph (the seventh graph),
  debugging
